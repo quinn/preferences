@@ -43,7 +43,7 @@ class Preference < ActiveRecord::Base
   
   # The definition for the attribute
   def definition
-    owner_type.constantize.preference_definitions[attribute] if owner_type
+    owner.class.preference_definitions[attribute] if owner_type
   end
   
   # Typecasts the value depending on the preference definition's declared type
