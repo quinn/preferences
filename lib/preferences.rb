@@ -117,6 +117,11 @@ module PluginAWeek #:nodoc:
         define_method("prefers_#{attribute}?") do |*group|
           prefers?(attribute, group.first)
         end
+
+        # more of the same
+        define_method("prefers_#{attribute}") do |*group|
+          prefers?(attribute, group.first)
+        end
         
         # Writer
         define_method("prefers_#{attribute}=") do |*args|
